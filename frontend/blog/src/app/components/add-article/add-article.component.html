@@ -1,0 +1,67 @@
+<main>
+  <form #form="ngForm" (ngSubmit)="submit()">
+    <h3>Create new Article</h3>
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Title</mat-label>
+      <input
+        matInput
+        placeholder="Ex. Pizza is the best fast food"
+        name="title"
+        [(ngModel)]="article$.title"
+        required
+      />
+    </mat-form-field>
+
+    <br />
+
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Author</mat-label>
+      <input
+        matInput
+        placeholder="Ex. Pizza is the best fast food"
+        name="author"
+        [(ngModel)]="article$.author"
+        required
+      />
+    </mat-form-field>
+
+    <br />
+
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Status</mat-label>
+      <mat-select
+        name="articleStatus"
+        [(ngModel)]="article$.articleStatus"
+        required
+      >
+        <mat-option *ngFor="let status of statuses" [value]="status">
+          {{ status }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <br />
+
+    <mat-form-field
+      class="full-width"
+      id="article-content"
+      appearance="outline"
+    >
+      <mat-label>Article content</mat-label>
+      <textarea
+        matInput
+        cdkTextareaAutosize
+        #autosize="cdkTextareaAutosize"
+        cdkAutosizeMinRows="5"
+        cdkAutosizeMaxRows="15"
+        name="content"
+        [(ngModel)]="article$.content"
+        required
+      ></textarea>
+    </mat-form-field>
+    <br />
+    <button mat-raised-button color="primary" class="btn-primary" type="submit">
+      <mat-icon>edit</mat-icon>Submit
+    </button>
+  </form>
+</main>

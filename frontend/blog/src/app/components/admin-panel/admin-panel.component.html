@@ -1,0 +1,62 @@
+<main>
+  <div>
+    <button mat-button color="primary" (click)="addArticlePage('add-article')">
+      <mat-icon>note_add</mat-icon>Add Article
+    </button>
+  </div>
+
+  <table mat-table [dataSource]="articles$" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef>Title</th>
+      <td mat-cell *matCellDef="let element">{{ element.title }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="content">
+      <th mat-header-cell *matHeaderCellDef>Content</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.content | slice : 0 : 75 }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="articleStatus">
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.articleStatus }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="createdAt">
+      <th mat-header-cell *matHeaderCellDef>Created At</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.createdAt | date : "yyyy-MM-dd HH:mm:ss" }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="updatedAt">
+      <th mat-header-cell *matHeaderCellDef>Updated At</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.updatedAt | date : "yyyy-MM-dd HH:mm:ss" }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-button color="accent" (click)="editArticle(element.id)">
+          <mat-icon>edit</mat-icon>Edit
+        </button>
+        <button mat-button color="warn" (click)="deleteArticle(element.id)">
+          <mat-icon>delete</mat-icon>Delete
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</main>

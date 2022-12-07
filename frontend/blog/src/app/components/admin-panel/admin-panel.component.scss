@@ -1,0 +1,23 @@
+main {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  div {
+    text-align: right;
+    margin: 10px;
+  }
+  table {
+    width: 100%;
+    border-spacing: 10px;
+  }
+}

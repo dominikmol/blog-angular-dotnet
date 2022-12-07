@@ -1,0 +1,37 @@
+main {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  article {
+    border: 1px solid gray;
+    margin: 10px;
+    color: white;
+    padding: 10px;
+    p {
+      text-align: justify;
+    }
+    #title-format {
+      text-align: left;
+    }
+    #date-format {
+      text-align: right;
+    }
+    table {
+      width: 100%;
+    }
+    .mat-display-1 {
+      padding: 0px;
+      margin: 0px;
+    }
+  }
+}

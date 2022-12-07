@@ -1,0 +1,26 @@
+<main>
+  <article *ngFor="let article of articles$">
+    <table>
+      <tr>
+        <th>
+          <p id="title-format" class="mat-display-1">{{ article.title }}</p>
+        </th>
+        <th>
+          <p id="date-format">
+            {{ article.updatedAt | date : "yyyy-MM-dd HH:mm:ss" }}
+          </p>
+        </th>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <p id="author-format">author: {{ article.author }}</p>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <p>{{ article.content }}</p>
+        </td>
+      </tr>
+    </table>
+  </article>
+</main>

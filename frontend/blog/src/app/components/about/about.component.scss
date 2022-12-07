@@ -1,0 +1,21 @@
+main {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  article {
+    a {
+      color: azure;
+    }
+    border: 1px solid gray;
+    margin: 10px;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    p {
+      text-align: justify;
+    }
+  }
+}

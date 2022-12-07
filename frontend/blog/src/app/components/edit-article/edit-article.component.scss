@@ -1,0 +1,25 @@
+main {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  form {
+    border: 1px solid gray;
+    margin: 10px;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    #article-content {
+      width: 75%;
+    }
+  }
+}
